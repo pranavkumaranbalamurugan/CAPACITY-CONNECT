@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { api } from '../../api/apiInstance';
 import { AUTH_API } from "../../api/api_functions/auth";
 import type { LoginResponse } from "../../models/auth";
+import logo from "../../assets/Workspere Logo v5.png";
 
 function LoginPage() {
     const [email, setEmail] = useState("");
@@ -44,7 +45,7 @@ function LoginPage() {
         <div className="d-flex justify-content-center align-items-center min-vh-100 " >
             <div className="border rounded p-4 shadow bg-light" style={{ width: "400px" }} >
                 <div className='text-center'>
-                    <h2>Worksphere</h2>
+                    <img src={logo} alt="WorkSphere Logo" style={{ width: "250px", height: "auto" }}></img>
                     <h4>Login</h4>
                 </div>
                 <div className="mb-3">
