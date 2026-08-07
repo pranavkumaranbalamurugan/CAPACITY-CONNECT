@@ -21,9 +21,10 @@ app.include_router(employee)
 # Serve frontend — mount AFTER your API routes
 app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
 
-@app.on_event("startup")
-async def open_browser():
-    webbrowser.open("http://localhost:8000/pages/index.html")
+# @app.on_event("startup")
+# async def open_browser():
+#     webbrowser.open("http://localhost:5173/")
+#     webbrowser.open("http://localhost:8000/docs")
 
 
 
