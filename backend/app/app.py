@@ -1,6 +1,7 @@
 #Libraries Import
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 import webbrowser
 
 #Services Import
@@ -14,12 +15,21 @@ Base.metadata.create_all(bind=engine)
 
 app=FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(auth)
 app.include_router(test)
 app.include_router(employee)
 
-# Serve frontend — mount AFTER your API routes
-app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
+
 
 # @app.on_event("startup")
 # async def open_browser():
