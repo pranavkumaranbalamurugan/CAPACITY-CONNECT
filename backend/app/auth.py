@@ -14,13 +14,7 @@ from app.schemas import CreateUserRequest, Token
 from app.db import get_db
 from app.config import SECRET_KEY, ALGORITHM, bcrypt_context
 
-
 auth = APIRouter(prefix="/auth", tags=["auth"])
-
-SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = "HS256"
-
-
 
 db_dependency= Annotated[Session, Depends(get_db)]
 

@@ -16,7 +16,7 @@ function Dashboard(){
             </div>
             <div>
                 <h1>login successfull and this is the dashboard</h1>
-                <button onClick={() => navigate("/login")} className="btn btn-primary" >Press me to go back to login page</button>
+                <button onClick={() => navigate("/")} className="btn btn-primary" >Press me to go back to login page</button>
             </div>
         </>
     )

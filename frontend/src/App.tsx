@@ -1,27 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import LoginPage from "./views/login page";
 import Layout from "./views/layout";
 import Dashboard from "./views/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import MainPage from "./views/login page";
+import TestingPage from "./testing";
+import TestCreateUser from "./testing/pages/create_user";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
 
-                {/* Public */}
-                <Route path="/login" element={<LoginPage />} />
+                 {/* Home */}
+                <Route path="/" element={<MainPage />} />
 
                 {/* Protected */}
                 <Route element={<ProtectedRoute />}>
                     <Route element={<Layout />}>
-                        <Route
-                            path="/dashboard"
-                            element={<Dashboard />}
-                        />
+                        <Route path="/dashboard" element={<Dashboard />} />
                     </Route>
                 </Route>
+
+                {/*Testing Pages*/}
+                <Route path='/testing' element={<TestingPage/>}/>
+                <Route path='/testing/create user' element ={<TestCreateUser/>} />
 
             </Routes>
         </BrowserRouter>

@@ -1,9 +1,9 @@
 function CheckInTimer() {
 
     return (
-        <div className="flex justify-content-center">
+        <div className="border rounded p-4 shadow bg-light">
             <div>
-                <p>hour:minutes:seconds</p>
+
             </div>
             <button>Check-in</button>
         </div>

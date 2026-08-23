@@ -1,6 +1,7 @@
-export const AUTH_API = {
-  LOGIN: "/auth/token",
-  REGISTER: "/auth/register",
-  REFRESH: "/auth/refresh",
-  LOGOUT: "/auth/logout",
-};
+export enum ApiPaths_Auth {
+  login = "auth/token"
+}
+
+export enum ApiPaths_Test {
+  test = "auth/"
+}
