@@ -33,11 +33,11 @@ function LoginContainer() {
 
   return (
 
-    <div >
+    <div className="border rounded p-4 shadow bg-light" style={{ width: "400px" }}>
       <div>
-        <div>
-          <h3>Welcome back</h3>
-          <p>Please enter your details to sign-in<br /></p>
+        <div className='text-center'>
+          <h2>Capacity Connect</h2>
+          <p>Welcome back. Please log in to your account.<br /></p>
         </div>
         <form className='py-4' onSubmit={handleLogin}>
           <div className="mb-3">
@@ -49,9 +49,13 @@ function LoginContainer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            
           </div>
           <div className="mb-3">
+            <span className='d-flex justify-content-between align-items-center'>
             <label className="form-label">Password</label>
+            <p><a href='#' className='link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>Forgot password?</a></p>
+            </span>
             <input
               className='form-control'
               type="password"
@@ -60,6 +64,16 @@ function LoginContainer() {
               onChange={(e) => setPassword(e.target.value)}
             />
             {error && <p>{error}</p>}
+          </div>
+          <div className='mb-3"'>
+            <label>
+              <input
+                type='checkbox'
+                className='btn btn-primary'
+                placeholder=''
+              />
+              {" "}Remember me
+            </label>
           </div>
           <div className='d-grid gap-2"'>
             <button
@@ -70,6 +84,7 @@ function LoginContainer() {
               {isLoading ? "Signing in...." : "Sign-in"}
             </button>
           </div>
+          
         </form>
       </div>
     </div>
