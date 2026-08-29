@@ -10,11 +10,9 @@ function TestCreateUser() {
     const [error, setError] = useState("");
 
     const roles = [
-        { value: "SUPER ADMIN", label: "Super Admin" },
         { value: "ADMIN", label: "Admin" },
-        { value: "HR", label: "HR" },
-        { value: "MANAGER", label: "Manager" },
-        { value: "EMPLOYEE", label: "Employee" },
+        { value: "TRAINER", label: "Trainer" },
+        { value: "TRAINEE", label: "Trainee" },
     ];
 
     const handleTestCreateUser = async (e: React.FormEvent<HTMLFormElement>) => {
