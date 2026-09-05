@@ -13,18 +13,18 @@ function App() {
 
                  {/* Home */}
                 <Route path="/" element={<MainPage />} />
+                <Route path="/traineedashboard" element={<TraineeDashboard />} />
 
                 {/* Protected */}
-                <Route element={<ProtectedRoute />}>
+                {/* <Route element={<ProtectedRoute />}>
                     <Route element={<Layout />}>
                         <Route path="/traineedashboard" element={<TraineeDashboard />} />
                     </Route>
-                </Route>
+                </Route> */}
 
                 {/*Testing Pages*/}
                 <Route path='/testing' element={<TestingPage/>}/>
                 <Route path='/testing/create user' element ={<TestCreateUser/>} />
-
             </Routes>
         </BrowserRouter>
     );
