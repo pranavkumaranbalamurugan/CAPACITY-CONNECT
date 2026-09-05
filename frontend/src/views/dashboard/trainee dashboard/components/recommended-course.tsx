@@ -1,11 +1,11 @@
 import { FaStar } from "react-icons/fa";
-
+import CourseBanner from "../../../../assets/samplebanner.webp"
 
 type RecommendedCourseCardProps = {
-    title:String;
+    title:string;
     ratings:number;
     reviews:number;
-    duration:String;
+    duration:string;
 }
 
 const RecommendedCourseCard = ({
@@ -16,16 +16,35 @@ const RecommendedCourseCard = ({
 }:RecommendedCourseCardProps ) => {
 
     return (
-        <div className="w-100 h-100 rounded border bg-white p-3 shadow-sm">
-            <div>
+        <div className="w-100 rounded-3 border bg-white shadow-sm overflow-hidden">
+            <div className="position-relative">
+                <img
+                    src={CourseBanner}
+                    alt={title}
+                    className="w-100"
+                    style={{
+                        height: "130px",
+                        objectFit: "cover",
+                    }}
+                />
 
+                <span
+                    className="position-absolute bottom-0 end-0 bg-white px-2 py-1 small fw-semibold"
+                >
+                    {duration}
+                </span>
             </div>
-            <div>
-                <p>{title}</p>
-                <p><FaStar/> {ratings} ({reviews} reviews) </p>
+            <div className="p-3">
+                <p className="fw-semibold mb-1">
+                    {title}
+                </p>
+                <p className="small mb-2">
+                    <FaStar className="me-1" /> 
+                    {ratings} ({reviews} reviews) 
+                </p>
                 <button
                 type='button'
-                className="btn"
+                className="btn btn-light w-100"
                 >
                     Enroll Now
                 </button>
@@ -55,7 +74,7 @@ const RecommendedCourseCards = () => {
     return(
         <div className="row g-3">
             {cards.map((card) => (
-                <div className="col-12 col-md-6 col-lg-3" key={card.title}>
+                <div className="col-12 col-md-6" key={card.title}>
                     <RecommendedCourseCard {...card} />
                 </div>
             ))}
