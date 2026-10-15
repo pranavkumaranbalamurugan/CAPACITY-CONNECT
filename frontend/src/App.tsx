@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./views/layout";
-import Dashboard from "./views/dashboard";
+import TraineeDashboard from "./views/dashboard/trainee dashboard/index";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MainPage from "./views/login page";
 import TestingPage from "./testing";
@@ -13,18 +13,18 @@ function App() {
 
                  {/* Home */}
                 <Route path="/" element={<MainPage />} />
+                <Route path="/traineedashboard" element={<TraineeDashboard />} />
 
                 {/* Protected */}
-                <Route element={<ProtectedRoute />}>
+                {/* <Route element={<ProtectedRoute />}>
                     <Route element={<Layout />}>
-                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/traineedashboard" element={<TraineeDashboard />} />
                     </Route>
-                </Route>
+                </Route> */}
 
                 {/*Testing Pages*/}
                 <Route path='/testing' element={<TestingPage/>}/>
                 <Route path='/testing/create user' element ={<TestCreateUser/>} />
-
             </Routes>
         </BrowserRouter>
     );
